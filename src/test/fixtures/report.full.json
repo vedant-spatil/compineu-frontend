@@ -1,0 +1,28 @@
+{
+  "title": "Out-of-portfolio access and bulk export by AG-1147",
+  "actor": { "id": "AG-1147", "name": "Agent AG-1147" },
+  "detected_at": "2026-11-20T00:20:00Z",
+  "risk_score": 89,
+  "severity": "Critical",
+  "summary": "Agent AG-1147 opened 1,840 health-claim records outside his portfolio and exported 1,200 rows. PH_001 and PH_002 were the most accessed policyholders.",
+  "scenario": "malicious_insider",
+  "attack_techniques": ["T1530", "T1567"],
+  "cited_event_ids": ["EV-90211", "EV-90250", "EV-90312"],
+  "timeline": [
+    { "event_id": "EV-90211", "what": "Search for PH_001 outside portfolio" },
+    { "event_id": "EV-90312", "what": "Exported 1,200 rows" }
+  ],
+  "impact": { "records": 1840, "rows_exported": 1200, "tiers": { "T1": 1840 } },
+  "justification": {
+    "verdict": "unjustified",
+    "supporting_record_ids": [],
+    "missing_evidence": ["No transfer, servicing assignment or approval names AG-1147"],
+    "reasoning": "No ticket or assignment exists for these policyholders.",
+    "reasons": ["No assignment", "Export above baseline"]
+  },
+  "recommended_playbooks": ["PB1", "PB6", "PB7"],
+  "controls_failed": ["C-PORTFOLIO", "C-EXPORT"],
+  "cert_in_draft": { "nature": "Unauthorised bulk access to health records", "timing": "Detected at 00:20" },
+  "dpdp_intimation_draft": { "nature": "Personal data accessed outside role", "extent": "1,840 policyholders" },
+  "open_questions": ["Was the export shared outside the company?"]
+}

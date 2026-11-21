@@ -1,0 +1,10 @@
+{
+  "title": "Partner key used from a new IP",
+  "detected_at": "2026-11-20T02:00:00Z",
+  "risk_score": 95,
+  "severity": "Critical",
+  "scenario": "compromised_partner",
+  "summary": "A TPA key fetched claims not assigned to it.",
+  "cert_in_draft": "DRAFT, requires DPO review. Nature: unauthorised claim access through a partner key.",
+  "recommended_playbooks": ["PB2", "PB6"]
+}

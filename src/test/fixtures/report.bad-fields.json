@@ -1,0 +1,11 @@
+{
+  "title": "Some fields have the wrong type",
+  "risk_score": "high",
+  "cited_event_ids": "EV-1",
+  "impact": "unknown",
+  "timeline": [{ "event_id": null, "what": 5 }, "text"],
+  "justification": { "verdict": 3, "reasons": "none" },
+  "controls_failed": [1, 2],
+  "cert_in_draft": 7,
+  "unexpected_new_field": { "a": 1 }
+}

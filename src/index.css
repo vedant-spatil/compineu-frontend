@@ -1,0 +1,113 @@
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-600.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+@import "tailwindcss";
+
+/*
+ * Colour roles (60-30-10):
+ *   60  page and surface: a cool mist, never pure white, so long sessions are easy on the eye.
+ *   30  brand (navy): navigation, headings, primary buttons, links. Navy reads as steady and trustworthy.
+ *   10  warn (amber): the one thing that needs a decision. ok (teal) means safe or done.
+ * danger (red) is not a brand colour. It appears only for critical risk and failures, so it keeps its meaning.
+ * Every text pairing below meets WCAG AA (4.5:1) on both page and surface.
+ */
+@theme {
+  --color-brand-50: #e6edf6;
+  --color-brand-100: #cbd8e9;
+  --color-brand-400: #5b83bd;
+  --color-brand-500: #3a66a6;
+  --color-brand-600: #2b5591;
+  --color-brand-700: #1e3554;
+  --color-brand-800: #16283f;
+  --color-brand-900: #0f1f33;
+
+  --color-ok-50: #e0f1ee;
+  --color-ok-100: #bfe2dc;
+  --color-ok-500: #149488;
+  --color-ok-600: #0f766e;
+  --color-ok-700: #0b5d57;
+
+  --color-warn-50: #fbefd5;
+  --color-warn-100: #f5dda6;
+  --color-warn-400: #eba42a;
+  --color-warn-500: #c97a06;
+  --color-warn-600: #8a5a06;
+  --color-warn-700: #7a4b00;
+
+  --color-info-50: #e6edf6;
+  --color-info-100: #cbd8e9;
+  --color-info-500: #2f5c99;
+  --color-info-600: #2a4f84;
+
+  --color-danger-50: #fbe9e7;
+  --color-danger-100: #f4c9c4;
+  --color-danger-500: #c8372d;
+  --color-danger-600: #a8231c;
+  --color-danger-700: #861a15;
+
+  --color-ink-900: #14233a;
+  --color-ink-700: #2a3950;
+  --color-ink-600: #3d4b61;
+  --color-ink-400: #5a687e;
+  --color-ink-200: #8090a6;
+  --color-line: #c7d1dd;
+  --color-page: #e3e9f0;
+  --color-surface: #f2f5f9;
+  --color-field: #fafbfd;
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-wordmark: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-page);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-warn-100);
+    color: var(--color-ink-900);
+  }
+
+  /* One focus style everywhere: an amber ring that shows on mist, surface and navy alike. */
+  :focus-visible {
+    outline: 2px solid var(--color-warn-400);
+    outline-offset: 2px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    accent-color: var(--color-brand-700);
+  }
+
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Identifiers and counts (AG-1147, PH_012, 1,840) sit in mono with aligned digits, so columns scan cleanly. */
+@utility id {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}

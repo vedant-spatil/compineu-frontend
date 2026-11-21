@@ -1,0 +1,15 @@
+{
+  "title": "Cover for a colleague on leave (Anita)",
+  "actor": "AG-0211",
+  "detected_at": "2026-11-20T01:10:00Z",
+  "risk_score": 54,
+  "scenario": "benign_exception",
+  "summary": "Anita read her colleague's policyholders while he was on approved leave.",
+  "justification": {
+    "verdict": "justified",
+    "supporting_record_ids": ["LEAVE-221", "TKT-9001"],
+    "missing_evidence": [],
+    "reasoning": "The manager wrote the ticket before her first access, volume is within normal and nothing was exported.",
+    "reasons": ["Ticket by the colleague's manager", "Created before first access", "Within normal volume", "No exports"]
+  }
+}

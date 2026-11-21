@@ -1,0 +1,7 @@
+{
+  "title": "Ex-employee login",
+  "detected_at": "2026-11-20T03:00:00Z",
+  "risk_score": 60,
+  "scenario": "compromised_account",
+  "justification": { "verdict": "inconclusive", "reasons": [], "missing_evidence": [], "supporting_record_ids": [] }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "C-AUDIT",
+    "requirement": "Tamper-proof audit trail of every decision and action",
+    "source": "IRDAI 2026, Policy 2.16, item 11",
+    "clause_text": "Paraphrase: audit logs of security-relevant actions must be kept so that they cannot be altered. Check against the primary text before quoting.",
+    "tag": "Legal"
+  },
+  {
+    "id": "C-CERTIN",
+    "requirement": "Report a cyber incident to CERT-In within 6 hours of detection",
+    "source": "IRDAI 2026, Policy 2.10, Section 3.6(3)",
+    "clause_text": "Paraphrase: a cyber incident must be reported to CERT-In within 6 hours. The clock starts at detection. Check against the primary text before quoting.",
+    "tag": "Legal"
+  },
+  {
+    "id": "C-DPDP72",
+    "requirement": "Detailed personal data breach report within 72 hours (readiness)",
+    "source": "DPDP Rules, Rule 7 (in force from 13 May 2027)",
+    "clause_text": "Paraphrase: after a personal data breach, a detailed report is due within 72 hours. Shown as DPDP-aligned readiness, because the rule takes effect on 13 May 2027.",
+    "tag": "Legal"
+  },
+  {
+    "id": "C-AGENTS",
+    "requirement": "The insurer polices agent and POSP access, which sits outside the IRDAI cyber guideline scope",
+    "source": "IRDAI 2026, Section 1.4 (scope)",
+    "clause_text": "Paraphrase: agents and POSPs are outside the guideline's scope, so the insurer has to supervise their access itself.",
+    "tag": "Voluntary"
+  },
+  {
+    "id": "C-PORTFOLIO",
+    "requirement": "Agents access only policyholders in their own portfolio",
+    "source": "PolicyGuard control",
+    "clause_text": "Access to a policyholder outside the agent's portfolio needs a transfer, servicing assignment or approval that names the agent.",
+    "tag": "Voluntary"
+  },
+  {
+    "id": "C-INACTIVE",
+    "requirement": "Terminated or suspended identities cannot access data",
+    "source": "PolicyGuard control",
+    "clause_text": "Any access by a terminated or suspended login scores at least 60 and is never auto-resolved.",
+    "tag": "Voluntary"
+  },
+  {
+    "id": "C-EXPORT",
+    "requirement": "Bulk exports are detected and reviewed",
+    "source": "PolicyGuard control",
+    "clause_text": "An export of 200 or more rows, or any export of the most sensitive tier, raises a signal.",
+    "tag": "Voluntary"
+  },
+  {
+    "id": "C-HUMAN",
+    "requirement": "A human approves containment before it runs",
+    "source": "PolicyGuard control",
+    "clause_text": "Playbooks run only after an analyst approves them with a reason of at least 20 characters.",
+    "tag": "Voluntary"
+  },
+  {
+    "id": "C-PII",
+    "requirement": "Customer names are tokenised before AI processing",
+    "source": "PolicyGuard control",
+    "clause_text": "Names become PH_### tokens before the AI sees them, and names are scrubbed from the AI's output. Revealing names is audited.",
+    "tag": "Voluntary"
+  }
+]
