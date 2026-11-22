@@ -1,5 +1,5 @@
 // Token lives in sessionStorage (plan 9): survives reloads in one tab, cleared on tab close.
-const KEY = "aml_access_token";
+const KEY = "compineu_access_token";
 
 export function getToken(): string | null {
   try {

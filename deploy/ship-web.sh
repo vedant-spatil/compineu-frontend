@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Builds the React app and publishes it to the private S3 web bucket behind CloudFront (stack "policyguard").
+# Builds the React app and publishes it to the private S3 web bucket behind CloudFront (stack "compineu").
 #   AWS_PROFILE=hackathon bash deploy/ship-web.sh
 # The page and the API share one CloudFront origin, so the API base is "" (same origin, paths start with /api)
 # and the backend needs no CORS.
 set -euo pipefail
 export MSYS_NO_PATHCONV=1
 export AWS_REGION="${AWS_REGION:-ap-south-1}" AWS_DEFAULT_REGION="${AWS_REGION:-ap-south-1}"
-STACK="${STACK:-policyguard}"
+STACK="${STACK:-${PROJECT:-compineu}}"
 cd "$(dirname "$0")/.."
 
 out() { aws cloudformation describe-stacks --stack-name "$STACK" --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue" --output text; }

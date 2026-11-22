@@ -17,7 +17,7 @@ for (const [email, password, role] of [["admin@gmail.com", "admin123", "admin"],
   console.log(`${email}: badge ${shown.trim()} ok`);
   await page.click("button:has-text('Logout')");
   await page.waitForURL(/\/login/, { timeout: 10000 });
-  const token = await page.evaluate(() => sessionStorage.getItem("aml_access_token"));
+  const token = await page.evaluate(() => sessionStorage.getItem("compineu_access_token"));
   if (token) throw new Error("token not cleared on logout");
   console.log(`${email}: logout ok`);
   await page.close();

@@ -23,7 +23,7 @@ export function itemsFor(role: string | undefined, features: { quality?: boolean
   const items: Item[] = [{ to: "/", label: "Dashboard", icon: ICONS.dashboard }];
   if (role === "admin") items.push({ to: "/alerts", label: "Alerts", icon: ICONS.alerts });
   items.push({ to: "/cases", label: role === "qa" ? "My incidents" : "Incidents", icon: ICONS.cases });
-  // Import and Projects are hidden for PolicyGuard AI. Their pages and sources stay in the repo so this can be reverted.
+  // Import and Projects are hidden for compineu. Their pages and sources stay in the repo so this can be reverted.
   items.push({ to: "/compliance", label: "Compliance", icon: ICONS.compliance });
   // Quality is listed only when the backend has /api/quality.
   if (role === "admin" && features.quality) items.push({ to: "/quality", label: "Quality", icon: ICONS.quality });
@@ -58,7 +58,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`flex items-center gap-2 font-wordmark text-[1.0625rem] font-semibold tracking-tight ${className}`}>
       <Icon name="shield" size={20} className="text-warn-400" />
-      PolicyGuard
+      compineu
     </span>
   );
 }

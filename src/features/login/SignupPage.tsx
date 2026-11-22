@@ -59,7 +59,7 @@ export default function SignupPage() {
     <div className="flex min-h-dvh items-center justify-center px-4 py-10">
       <form onSubmit={onSubmit} className="w-full max-w-sm space-y-5 rounded-lg bg-surface p-8 shadow-sm ring-1 ring-line">
         <div className="text-center">
-          <span className="font-wordmark text-3xl font-bold tracking-tight text-brand-600">POLICYGUARD AI</span>
+          <span className="font-wordmark text-3xl font-bold tracking-tight text-brand-600">COMPINEU</span>
           <h1 className="mt-4 text-xl font-semibold text-ink-900">Create an account</h1>
         </div>
         <label className="block text-sm font-medium text-ink-900">

@@ -1,4 +1,4 @@
-// Browser smoke test against the live backend (port 8001) and Vite dev server (5173).
+// Browser smoke test against the live backend (port 8000) and Vite dev server (5173).
 // Run: node e2e/smoke.mjs   (needs google-chrome installed; set E2E_EMAIL / E2E_PASSWORD)
 import { chromium } from "playwright-core";
 

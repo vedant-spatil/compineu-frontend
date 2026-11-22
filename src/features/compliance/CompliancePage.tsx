@@ -57,7 +57,7 @@ export default function CompliancePage() {
     <div className="space-y-6">
       <PageHeader
         title="Compliance"
-        subtitle="The rules PolicyGuard checks and where each comes from. This shows DPDP-aligned readiness, not a compliance claim."
+        subtitle="The rules compineu checks and where each comes from. This shows DPDP-aligned readiness, not a compliance claim."
       />
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label="Controls passing" value={ready ? `${passing} / ${controls.length}` : "-"} icon={<Icon name="shield" />} tone="ok" />

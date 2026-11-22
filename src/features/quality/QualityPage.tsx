@@ -6,8 +6,8 @@ import { useQuality } from "./useQuality";
 /** A value of 0 to 1 is a fraction, anything larger is already a percentage. */
 const pct = (v: number | undefined) => (v === undefined ? "-" : `${(v <= 1 ? v * 100 : v).toFixed(1)}%`);
 
-const PRECISION = "Precision: of the incidents PolicyGuard raised, the share that were real threats. Higher means fewer false alarms.";
-const RECALL = "Recall: of the real threats in the test scenarios, the share PolicyGuard caught. Higher means fewer missed threats.";
+const PRECISION = "Precision: of the incidents compineu raised, the share that were real threats. Higher means fewer false alarms.";
+const RECALL = "Recall: of the real threats in the test scenarios, the share compineu caught. Higher means fewer missed threats.";
 
 /** Precision and recall with AI review off and on. Numbers come from /api/quality; nothing is quoted from a target. */
 export default function QualityPage() {
@@ -17,7 +17,7 @@ export default function QualityPage() {
     <div className="space-y-6">
       <PageHeader
         title="Detection quality"
-        subtitle="How often PolicyGuard is right, measured against the known answers of the demo scenarios."
+        subtitle="How often compineu is right, measured against the known answers of the demo scenarios."
       />
       {q.isLoading && <Card><LoadingBlock label="Loading quality numbers…" rows={4} /></Card>}
       {q.isError && <QueryError error={q.error} onRetry={() => void q.refetch()} />}
