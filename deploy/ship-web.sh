@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Builds the React app and publishes it to the private S3 web bucket behind CloudFront (stack "compineu").
-#   AWS_PROFILE=hackathon bash deploy/ship-web.sh
+#   AWS_PROFILE=<profile> bash deploy/ship-web.sh
 # The page and the API share one CloudFront origin, so the API base is "" (same origin, paths start with /api)
 # and the backend needs no CORS.
 set -euo pipefail
