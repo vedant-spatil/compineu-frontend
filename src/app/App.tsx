@@ -7,6 +7,7 @@ import { LoadingBlock } from "../components/ui";
 import TopNav from "./TopNav";
 import Live from "./Live";
 import LoginPage from "../features/login/LoginPage";
+import SignupPage from "../features/login/SignupPage";
 import Dashboard from "../features/dashboard/Dashboard";
 import AlertQueue from "../features/alerts/AlertQueue";
 import CaseDetail from "../features/cases/CaseDetail";
@@ -75,7 +76,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<Navigate to="/login" replace />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route path="*" element={<Shell />} />
     </Routes>
   );

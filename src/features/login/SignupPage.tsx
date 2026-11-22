@@ -3,7 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_BASE, ApiError } from "../../api/client";
 import { TokenSchema } from "../../api/schemas";
 import { setToken } from "../../auth/session";
-import { buttonClass, ErrorState } from "../../components/ui";
+import { Wordmark } from "../../app/Sidebar";
+import { Icon } from "../../components/icons";
+import { buttonClass, ErrorState, fieldClass } from "../../components/ui";
+import AuthLayout from "./AuthLayout";
 
 export const MIN_PASSWORD = 10;
 
@@ -52,27 +55,28 @@ export default function SignupPage() {
     }
   }
 
-  const field =
-    "mt-1.5 w-full rounded-lg bg-field px-3 py-2.5 text-ink-900 ring-1 ring-inset ring-ink-200 outline-none focus:ring-2 focus:ring-brand-500";
+  const field = `${fieldClass} mt-1.5 w-full py-2.5`;
 
   return (
-    <div className="flex min-h-dvh items-center justify-center px-4 py-10">
-      <form onSubmit={onSubmit} className="w-full max-w-sm space-y-5 rounded-lg bg-surface p-8 shadow-sm ring-1 ring-line">
-        <div className="text-center">
-          <span className="font-wordmark text-3xl font-bold tracking-tight text-brand-600">COMPINEU</span>
-          <h1 className="mt-4 text-xl font-semibold text-ink-900">Create an account</h1>
+    <AuthLayout>
+      <form onSubmit={onSubmit} className="w-full max-w-sm space-y-5 rounded-lg border border-line bg-surface p-8">
+        <div>
+          <Wordmark className="mb-6 text-brand-900 lg:hidden" />
+          <h1 className="text-xl font-semibold tracking-tight text-ink-900">Create an account</h1>
+          <p className="mt-1 text-sm text-ink-600">Accounts created here have administrator access.</p>
         </div>
         <label className="block text-sm font-medium text-ink-900">
           Email
-          <input className={field} type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className={field} type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="block text-sm font-medium text-ink-900">
           Password (at least {MIN_PASSWORD} characters)
           <div className="relative">
             <input
-              className={`${field} pr-16`}
+              className={`${field} pr-11`}
               type={showPassword ? "text" : "password"}
               autoComplete="new-password"
+              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -80,10 +84,11 @@ export default function SignupPage() {
               type="button"
               aria-pressed={showPassword}
               aria-label={showPassword ? "Hide password" : "Show password"}
+              title={showPassword ? "Hide password" : "Show password"}
               onClick={() => setShowPassword((on) => !on)}
-              className="absolute inset-y-0 right-2 my-auto h-7 rounded-md px-2 text-xs font-medium text-ink-600 hover:bg-page hover:text-ink-900"
+              className="absolute inset-y-0 right-1.5 my-auto mt-[0.6rem] grid h-8 w-8 place-items-center rounded-md text-ink-400 hover:bg-page hover:text-ink-900"
             >
-              {showPassword ? "Hide" : "Show"}
+              <Icon name={showPassword ? "lock" : "eye"} size={16} />
             </button>
           </div>
         </label>
@@ -93,6 +98,7 @@ export default function SignupPage() {
             className={field}
             type={showPassword ? "text" : "password"}
             autoComplete="new-password"
+            required
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
           />
@@ -100,11 +106,12 @@ export default function SignupPage() {
         {error && <ErrorState text={error} />}
         <button disabled={busy} className={`${buttonClass()} w-full py-2.5`}>
           {busy ? "Creating…" : "Create account"}
+          {!busy && <Icon name="arrowRight" size={16} />}
         </button>
         <p className="text-center text-sm text-ink-600">
           Already have an account? <Link to="/login" className="font-medium text-brand-600 hover:underline">Sign in</Link>
         </p>
       </form>
-    </div>
+    </AuthLayout>
   );
 }
