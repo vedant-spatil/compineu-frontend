@@ -4,7 +4,7 @@ import type { IconName } from "../components/icons";
 /**
  * The incident report written by the AI investigator (the REPORT schema of the build plan). Almost every field is
  * optional and unknown fields pass through, so the screen still renders if the backend adds or omits something.
- * Field names follow the plan; if Bhavya's sample differs, only this file and the fixtures change.
+ * Field names follow the plan; if the backend's sample differs, only this file and the fixtures change.
  */
 const looseObject = <T extends z.ZodRawShape>(shape: T) => z.object(shape).passthrough();
 /** Optional, and a value of the wrong type is dropped instead of failing the whole report. */
